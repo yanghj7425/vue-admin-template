@@ -56,6 +56,28 @@ export const constantRoutes = [
   },
 
   {
+    path: '/order',
+    component: Layout,
+    redirect: '/order/detail',
+    name: '运维装机',
+    meta: { title: '运维装机', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'detail',
+        name: '订单详情',
+        component: () => import('@/views/order/detail'),
+        meta: { title: '订单详情', icon: 'table' }
+      },
+      {
+        path: 'pool',
+        name: '回捞池',
+        component: () => import('@/views/order/pool'),
+        meta: { title: '回捞池', icon: 'table' }
+      }
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
